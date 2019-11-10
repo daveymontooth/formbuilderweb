@@ -1,0 +1,27 @@
+<div>
+    <style>
+        .form {
+            border: 1px solid #eee;
+            margin: 16px auto;
+            padding: 16px;
+        }
+    </style>
+    <h2>Form List</h2>
+    <div ng-if="vm.error === ''">{{ vm.error }}</div>
+    <div ng-if="vm.forms.length === 0">No forms</div>
+    <div ng-repeat="form in vm.forms" class="form">
+        <h3>{{ form.name }}</h3>
+        <div ng-if="form.fields">
+            <h4>Fields</h4>
+            <p ng-repeat="field in form.fields">
+                <span>Label: {{ field.label }}</span>
+                <br/>
+                <span>Type: {{ field.type }}</span>
+                <br/>
+                <span>Order: {{ field.order }}</span>
+                <br/>
+                <span>Required: {{ field.required }}</span>
+            </p>
+        </div>    
+    </div>
+</div>
